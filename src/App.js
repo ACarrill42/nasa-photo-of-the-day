@@ -32,15 +32,5 @@ function App() {
   );
 }
 
-// function Body(props) {
-//   const {info , setInfo} = props;
-
-
-// return (
-
-//   <div>{props.url}</div>
-
-//   );
-// }
 
 export default App;
