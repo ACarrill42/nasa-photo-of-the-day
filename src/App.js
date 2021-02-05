@@ -15,10 +15,15 @@ const StyledDiv = styled.div `
     color: green;
   }
 
-  ${props => (props.type === 'info' ? 'color: orange;' : null)}
-  ${props => (props.type === 'date' ? 'color: gold;' : null)}
-  ${props => (props.type === 'copyright' ? 'color: magenta;' : null)}
+
 `;
+
+const StyledP = styled.p `
+    ${props => (props.type === 'date' ? `color: maroon;` : null)}
+    ${props => (props.type === 'info' ? `color: black;` : null)}
+    ${props => (props.type === 'copyright' ? `color: gold;` : null)}
+`
+
 
 function App() {
 
@@ -41,10 +46,10 @@ function App() {
     <StyledDiv className="App">
       <h1>NASA API!!!</h1>
       <h2>Title: {info.title}</h2>
-      <p type='info'>Information: {info.explanation}</p>
-      <p type='date'>Date: {info.date}</p>
       <img src ={info.url} alt ={info.title}/>
-      <p type='copyright'>Copyright: {info.copyright}</p>
+      <StyledP type ='date'>Date: {info.date}</StyledP>
+      <StyledP type ='info'>Information: {info.explanation}</StyledP>
+      <StyledP type ='copyright'>Copyright: {info.copyright}</StyledP>     
     </StyledDiv>
   );
 }
